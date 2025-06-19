@@ -346,7 +346,7 @@ document.addEventListener('DOMContentLoaded', function() {
     // رسائل التغذية الراجعة
     const correctFeedbacks = ["حسبك", "النصر", "أسك", "ما شاء الله"];
     const incorrectFeedbacks = ["هذ الزلقة", "اطرح بالك", "أنت أمالك"];
-    const mistakesMessages = ["جاتك 1", "جاووك 2", "جاووك 3"];
+    const mistakesMessages = ["جاتك", "جاووك","جاووك "];
     
     // وظائف التطبيق
     function showScreen(screen) {
