@@ -1,0 +1,102 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>زرك الرسم</title>
+
+  <!-- روابط Google Fonts و FontAwesome -->
+  <link href="https://fonts.googleapis.com/css2?family=Tajawal:wght@400;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+
+  <!-- ملف التنسيقات المحلي -->
+  <link rel="stylesheet" href="styles.css">
+
+  <!-- روابط PWA -->
+  <link rel="manifest" href="manifest.json">
+  <link rel="icon" href="icon-192.png">
+  <meta name="theme-color" content="#4CAF50">
+
+  <!-- تسجيل Service Worker -->
+  <script>
+    if ('serviceWorker' in navigator) {
+      navigator.serviceWorker.register('service-worker.js')
+        .then(() => console.log("✔ Service Worker تم تسجيله"))
+        .catch((err) => console.error("❌ فشل تسجيل Service Worker:", err));
+    }
+  </script>
+</head>
+<body>
+  <div id="app">
+    <!-- شاشة البداية -->
+    <div id="welcome-screen" class="screen active">
+      <h1 class="welcome-title">لاه تطرح أيدك</h1>
+      <div class="options-container">
+        <button id="start-btn" class="option-btn">أهيه</button>
+        <button id="exit-btn" class="option-btn">مان صايب</button>
+      </div>
+      <div class="about-icon" id="about-icon">
+        <i class="fas fa-info-circle"></i>
+      </div>
+    </div>
+
+    <!-- شاشة حول التطبيق -->
+    <div id="about-screen" class="screen">
+      <button id="back-btn" class="back-btn"><i class="fas fa-arrow-left"></i></button>
+      <div class="about-content">
+        <p>
+          السلام عليكم ورحمة الله تعالى وبركاته، مرحبًا بكم في هذا التطبيق الذي أنشأناه بعون الله
+          ليفيد طلاب المحاظر القدماء الذين لم تعد تسنح لهم الظروف لقراءة أو مراجعة الرسم.
+          ونرجو أن نكون قد أفدنا. نعلم أن هناك تقصيرًا كبيرًا بالمحتوى المقدم، لكن ذلك بسبب
+          المجهود الفردي. وزيادة على ذلك، هي تجربة أولية لنرى إذ ينفع أولاً.
+          ونسأل الله أن يعيننا في المستقبل على تطوير نسخة أكثر شمولية وموسوعية.
+          والله ولي التوفيق.
+        </p>
+      </div>
+    </div>
+
+    <!-- شاشة الأسئلة -->
+    <div id="question-screen" class="screen">
+      <div class="question-header">
+        <div class="keyword-icon">
+          <span>أتكلم</span>
+        </div>
+        <h2 id="question-text" class="question-text"></h2>
+      </div>
+      <div id="options-container" class="options-container"></div>
+      <div id="feedback" class="feedback"></div>
+      <div id="counter-container" class="counter-container">
+        <div id="mistakes-counter" class="mistakes-counter">
+          <i class="fas fa-times-circle"></i>
+          <span id="mistakes-count">0</span>
+          <span id="mistakes-message"></span>
+        </div>
+        <div id="correct-counter" class="correct-counter">
+          <i class="fas fa-check-circle"></i>
+          <span id="correct-count">0</span>
+          <span>ذ أل أصلحت</span>
+        </div>
+      </div>
+    </div>
+
+    <!-- شاشة 3 أخطاء -->
+    <div id="gameover-screen" class="screen">
+      <h2 class="gameover-title">أنت ثلثت</h2>
+      <div class="stats-container">
+        <div class="stat-item">
+          <i class="fas fa-check-circle"></i>
+          <span id="final-correct">0</span>
+          <span>ذ أل أصلحت</span>
+        </div>
+      </div>
+      <div class="options-container">
+        <button id="retry-btn" class="option-btn">لاه انعلها</button>
+        <button id="quit-btn" class="option-btn">أفيت</button>
+      </div>
+    </div>
+  </div>
+
+  <!-- ملف الجافاسكربت -->
+  <script src="script.js"></script>
+</body>
+</html>
