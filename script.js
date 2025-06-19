@@ -64,7 +64,7 @@ document.addEventListener('DOMContentLoaded', function() {
         {
             question: "السماوات",
             options: ["بألا ومحذوفة", "الأول محذوف والثاني ثابت", "الأول محذوف في القيد", "امحذف الاثنين"],
-            correctAnswer: "بألا ومحذوفة"
+            correctAnswer: "شد أولا ومحذوفة"
         },
         {
             question: "الشهداء",
