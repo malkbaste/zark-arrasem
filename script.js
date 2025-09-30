@@ -138,8 +138,8 @@ document.addEventListener('DOMContentLoaded', function() {
         },
         {
             question: "كاذبة",
-            options: ["محذوفة", "ثابتة تاء (ة)", "ثابتة تاء (ت)", "ما فيه ش"],
-            correctAnswer: "ثابتة تاء (ة)"
+            options: ["محذوفة التاء (ة)", "ثابتة تاء (ة)", "ثابتة تاء (ت)", "ما فيه ش"],
+            correctAnswer: " (ة)محذوفة التاء "
         },
         {
             question: "سبح اسم. القاعدة",
@@ -151,7 +151,7 @@ document.addEventListener('DOMContentLoaded', function() {
             options: ["محذوفة", "ثابتة", "ما فيه ش", "محمولة ثابتة"],
             correctAnswer: "ثابتة"
         },
-        {
+        
             question: "لئلا قاعدة",
             options: ["بالقبل", "استثناء بالالف الاولى", "الفتحة", "أو كسر"],
             correctAnswer: "استثناء بالالف الاولى"
@@ -475,3 +475,4 @@ document.addEventListener('DOMContentLoaded', function() {
     // تهيئة التطبيق
     showScreen(welcomeScreen);
 });
+
